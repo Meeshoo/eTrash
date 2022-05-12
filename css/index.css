@@ -1,0 +1,65 @@
+.html
+{
+	background-color: #B7BEC4;
+}
+
+#page
+{
+	z-index: 1;
+	width: 960px;
+	min-height: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#u98
+{
+	z-index: 2;
+	width: 909px;
+	margin-right: -10000px;
+	margin-top: -36px;
+	left: 26px;
+}
+
+#u103-8
+{
+	z-index: 4;
+	width: 257px;
+	min-height: 86px;
+	margin-right: -10000px;
+	margin-top: 110px;
+	left: 175px;
+}
+
+#u79-3
+{
+	z-index: 12;
+	width: 2px;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 128px;
+	left: 674px;
+}
+
+#u89-3
+{
+	z-index: 15;
+	width: 46px;
+	min-height: 18px;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 99px;
+	left: 615px;
+}
+
+body
+{
+	padding-top: 36px;
+	padding-bottom: 36px;
+}
+
+#page .verticalspacer
+{
+	clear: both;
+}
+
