@@ -1,0 +1,6 @@
+.env/
+.vscode/
+ARCHIVE/
+redacted_things.py
+*.sqlite3
+__pycache__/

@@ -1,0 +1,48 @@
+{% load static %}
+{% get_static_prefix as STATIC_PREFIX %}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>eTrash</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type='image/png' href="{%  static 'favicon.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}">
+</head>
+
+<h1>eTrash</h1>
+
+<div id="container">
+    <div id="gamer1">
+        <p>{{ McMitchName }}</p> 
+        <img class="avatar" src="{{ McMitchImage }}"></img>
+        <img src="{{ STATIC_PREFIX }}images/ranks/{{ McMitchRank }}.png"></img>
+    </div>
+
+    <div id="gamer2">
+        <p>{{ DefaultsoundName }}</p> 
+        <img class="avatar" src="{{ DefaultsoundImage }}"></img>
+        <img src="{{ STATIC_PREFIX }}images/ranks/{{ DefaultsoundRank }}.png"></img>
+    </div>
+
+    <div id="gamer3">
+        <p>{{ CallumcaName }}</p> 
+        <img class="avatar" src="{{ CallumcaImage }}"></img>
+        <img src="{{ STATIC_PREFIX }}images/ranks/{{ CallumcaRank }}.png"></img>
+    </div>
+
+    <div id="gamer4">
+        <p>{{ TheScannerDarklyName }}</p> 
+        <img class="avatar" src="{{ TheScannerDarklyImage }}"></img>
+        <img src="{{ STATIC_PREFIX }}images/ranks/{{ TheScannerDarklyRank }}.png"></img>
+    </div>
+
+    <div id="gamer5">
+        <p>{{ JakeAMName }}</p> 
+        <img class="avatar" src="{{ JakeAMImage }}"></img>
+        <img src="{{ STATIC_PREFIX }}images/ranks/{{ JakeAMRank }}.png"></img>
+    </div>
+</div>
