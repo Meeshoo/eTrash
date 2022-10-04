@@ -1,6 +1,6 @@
 h1 {
   color: white;
-  font-family: 'Righteous', cursive;
+  font-family: 'Oswald', sans-serif;
   font-size: 60px;
   text-align: center;
   margin-top: 80px;
@@ -24,7 +24,7 @@ body {
 }
 
 p {
-  font-family: 'Righteous', cursive;
+  font-family: 'Oswald', sans-serif;
   font-size: 20px;
 }
 
