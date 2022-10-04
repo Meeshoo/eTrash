@@ -13,34 +13,49 @@
     <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}">
 </head>
 
-<h1>eTrash</h1>
+    <div id="header">
+        <div class="header-title">
+            <a href="/"><img src="{{ STATIC_PREFIX }}images/eTrashHeader.png" width="164"></img></a>
+        </div>
+        <!-- <div class="header-sections"> -->
+            <div class="header-section">
+                <a href="#players"><h2>Players</h2></a>
+            </div>
+            <div class="header-section" action="#sponsors">
+                <a href="#sponsors"><h2>Sponsors</h2></a>
+            </div>
+            <div class="header-section" action="#team">
+                <a href="#team"><h2>Team</h2></a>
+            </div>
+        <!-- </div> -->
+    </div>
 
-<div id="container">
-    <div id="gamer1">
+<div id="players">
+    <div class="gamer">
         <p>{{ McMitchName }}</p> 
         <img class="avatar" src="{{ McMitchImage }}"></img>
         <img src="{{ STATIC_PREFIX }}images/ranks/{{ McMitchRank }}.png"></img>
     </div>
 
-    <div id="gamer2">
+    <div class="gamer">
         <p>{{ DefaultsoundName }}</p> 
         <img class="avatar" src="{{ DefaultsoundImage }}"></img>
         <img src="{{ STATIC_PREFIX }}images/ranks/{{ DefaultsoundRank }}.png"></img>
     </div>
 
-    <div id="gamer3">
+    <div class="gamer">
         <p>{{ CallumcaName }}</p> 
         <img class="avatar" src="{{ CallumcaImage }}"></img>
         <img src="{{ STATIC_PREFIX }}images/ranks/{{ CallumcaRank }}.png"></img>
     </div>
 
-    <div id="gamer4">
+    <div class="gamer">
         <p>{{ TheScannerDarklyName }}</p> 
         <img class="avatar" src="{{ TheScannerDarklyImage }}"></img>
         <img src="{{ STATIC_PREFIX }}images/ranks/{{ TheScannerDarklyRank }}.png"></img>
     </div>
 
-    <div id="gamer5">
+    <div class="gamer">
         <p>{{ JakeAMName }}</p> 
         <img class="avatar" src="{{ JakeAMImage }}"></img>
         <img src="{{ STATIC_PREFIX }}images/ranks/{{ JakeAMRank }}.png"></img>
