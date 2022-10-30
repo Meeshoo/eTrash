@@ -14,6 +14,14 @@ class RankModel(Model):
 class CSGORanks():
 
     def getCurrentCSGORanks(self):
-        allRanks = RankModel.scan(limit=5)
+        allRanks = RankModel.scan()
 
-        return allRanks
+        def dateSort(obj):
+            return obj.date
+
+        rankList = list(allRanks)
+        rankList.sort(reverse = True, key = dateSort)
+
+        rankList = rankList[:5]
+
+        return rankList
