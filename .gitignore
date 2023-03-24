@@ -1,4 +1,5 @@
 .env/
+.venv/
 .vscode/
 ARCHIVE/
 redacted_things.py
