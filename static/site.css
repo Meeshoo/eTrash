@@ -88,10 +88,17 @@ a:visited {
   height: 100%;
   width: 95%;
   display: flex;
+  flex-direction: row;
   background-color: rgb(51, 51, 51);
 }
 
 .sponsor {
-  width: 250px;
-  height: 250px;
+  height: 100%;
+  width: 40%;
+  text-align: center;
+}
+
+.sponsor_image {
+  width: 200px;
+  height: 200px;
 }
