@@ -34,15 +34,15 @@ def index(request):
         ranks = CSGORankClient.getCurrentCSGORanks()
 
         for entry in ranks:
-            if entry.username == "McMitch":
+            if entry.name == "McMitch":
                 McMitchRank = entry.rank
-            elif entry.username == "Callumca":
+            elif entry.name == "Callumca":
                 CallumcaRank = entry.rank
-            elif entry.username == "JakeAM":
+            elif entry.name == "JakeAM":
                 JakeAMRank = entry.rank
-            elif entry.username == "Defaultsound":
+            elif entry.name == "Defaultsound":
                 DefaultsoundRank = entry.rank
-            elif entry.username == "The Scanner Darkly":
+            elif entry.name == "The Scanner Darkly":
                 TheScannerDarklyRank = entry.rank
 
         return TemplateResponse(request, 'index.html', {

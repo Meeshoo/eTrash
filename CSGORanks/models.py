@@ -1,27 +1,24 @@
 from sys import getallocatedblocks
-from django.conf import settings
-from pynamodb.models import Model
-from pynamodb.attributes import UnicodeAttribute
 
-class RankModel(Model):
-    class Meta:
-        table_name = settings.CSGORANKS_TABLE_NAME
-        region = settings.CSGORANKS_REGION
-    date = UnicodeAttribute(hash_key=True)
-    username = UnicodeAttribute()
-    rank = UnicodeAttribute()
+from django.db import models
+
+class ranks(models.Model):
+    name = models.TextField(max_length=50)
+    rank = models.TextField(max_length=50)
+    date = models.TextField(max_length=50)
 
 class CSGORanks():
 
     def getCurrentCSGORanks(self):
-        allRanks = RankModel.scan()
 
         def dateSort(obj):
             return obj.date
 
-        rankList = list(allRanks)
-        rankList.sort(reverse = True, key = dateSort)
+        # Get all DB objects and sort by score
+        retreivedObjects = ranks.objects.all()
+        objectList = list(retreivedObjects)
+        objectList.sort(reverse = True, key = dateSort)
 
-        rankList = rankList[:5]
+        objectList = objectList[:5]
 
-        return rankList
+        return objectList
