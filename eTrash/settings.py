@@ -52,7 +52,7 @@ ROOT_URLCONF = 'eTrash.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['Steam/Templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
