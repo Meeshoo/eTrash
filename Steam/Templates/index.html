@@ -6,13 +6,12 @@
 <html>
 <head>
     <title>eTrash</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap" rel="stylesheet"> -->
     <link rel="shortcut icon" type='image/png' href="{%  static 'favicon.png' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}">
 </head>
 
+<body>
     <div id="header">
         <div class="header-title">
             <a href="/"><img src="{{ STATIC_PREFIX }}images/eTrashHeader.png" width="164"></img></a>
@@ -24,40 +23,91 @@
             <div class="header-section" action="#sponsors">
                 <a href="#sponsors"><h2>Sponsors</h2></a>
             </div>
-            <div class="header-section" action="#team">
+            <!-- <div class="header-section" action="#team">
                 <a href="#team"><h2>Team</h2></a>
-            </div>
+            </div> -->
         <!-- </div> -->
     </div>
 
 <div id="players">
-    <div class="gamer">
-        <p>{{ McMitchName }}</p> 
-        <img class="avatar" src="{{ McMitchImage }}"></img>
-        <img src="{{ STATIC_PREFIX }}images/ranks/{{ McMitchRank }}.png" title="{{ McMitchRank }}"></img>
+    <div class="player" id="mitch-player-info">
+            <p>{{ McMitchName }}</p> 
+            <img class="avatar" src="{{ McMitchImage }}"></img>
+            <img src="{{ STATIC_PREFIX }}images/ranks/{{ McMitchRank }}.png" title="{{ McMitchRank }}"></img>
     </div>
 
-    <div class="gamer">
-        <p>{{ DefaultsoundName }}</p> 
-        <img class="avatar" src="{{ DefaultsoundImage }}"></img>
-        <img src="{{ STATIC_PREFIX }}images/ranks/{{ DefaultsoundRank }}.png" title="{{ DefaultsoundRank }}"></img>
+    <div class="player" id="default-player-info">
+            <p>{{ DefaultsoundName }}</p> 
+            <img class="avatar" src="{{ DefaultsoundImage }}"></img>
+            <img src="{{ STATIC_PREFIX }}images/ranks/{{ DefaultsoundRank }}.png" title="{{ DefaultsoundRank }}"></img>
     </div>
 
-    <div class="gamer">
-        <p>{{ CallumcaName }}</p> 
-        <img class="avatar" src="{{ CallumcaImage }}"></img>
-        <img src="{{ STATIC_PREFIX }}images/ranks/{{ CallumcaRank }}.png" title="{{ CallumcaRank }}"></img>
+    <div class="player" id="callum-player-info">
+            <p>{{ CallumcaName }}</p> 
+            <img class="avatar" src="{{ CallumcaImage }}"></img>
+            <img src="{{ STATIC_PREFIX }}images/ranks/{{ CallumcaRank }}.png" title="{{ CallumcaRank }}"></img>
     </div>
 
-    <div class="gamer">
-        <p>{{ TheScannerDarklyName }}</p> 
-        <img class="avatar" src="{{ TheScannerDarklyImage }}"></img>
-        <img src="{{ STATIC_PREFIX }}images/ranks/{{ TheScannerDarklyRank }}.png" title="{{ TheScannerDarklyRank }}"></img>
+    <div class="player" id="scanner-player-info">
+            <p>{{ TheScannerDarklyName }}</p> 
+            <img class="avatar" src="{{ TheScannerDarklyImage }}"></img>
+            <img src="{{ STATIC_PREFIX }}images/ranks/{{ TheScannerDarklyRank }}.png" title="{{ TheScannerDarklyRank }}"></img>
     </div>
 
-    <div class="gamer">
-        <p>{{ JakeAMName }}</p> 
-        <img class="avatar" src="{{ JakeAMImage }}"></img>
-        <img src="{{ STATIC_PREFIX }}images/ranks/{{ JakeAMRank }}.png" title="{{ JakeAMRank }}"></img>
+    <div class="player" id="jake-player-info">
+            <p>{{ JakeAMName }}</p> 
+            <img class="avatar" src="{{ JakeAMImage }}"></img>
+            <img src="{{ STATIC_PREFIX }}images/ranks/{{ JakeAMRank }}.png" title="{{ JakeAMRank }}"></img>
     </div>
 </div>
+
+<div id="player-card-wrapper">
+    <span id="arrow" style="left: 152.5px;"></span>
+    <div id="player-cards">
+        <div class="player-card" id="mitch-player-card">
+            <p>Role: IGL</p>
+            <p>Rank: {{ McMitchRank }}</p>
+            <iframe width="1280" height="720"src="https://www.youtube.com/embed/SRlroCSz4w4"></iframe>
+        </div>
+        <div class="player-card" id="default-player-card">
+                <p>Role: Rifler</p>
+                <p>Rank: {{ DefaultsoundRank }}</p>
+                <iframe width="1280" height="720"src="https://www.youtube.com/embed/SRlroCSz4w4"></iframe>
+        </div>
+        <div class="player-card" id="callum-player-card">
+            <p>Role: Rifler</p>
+            <p>Rank: {{ CallumcaRank }}</p>
+            <iframe width="1280" height="720"src="https://www.youtube.com/embed/SRlroCSz4w4"></iframe>
+        </div>
+        <div class="player-card" id="scanner-player-card">
+            <p>Role: AWPer</p>
+            <p>Rank: {{ TheScannerDarklyRank }}</p>
+            <iframe width="1280" height="720"src="https://www.youtube.com/embed/SRlroCSz4w4"></iframe>
+        </div>
+        <div class="player-card" id="jake-player-card">
+            <p>Role: Lurker</p>
+            <p>Rank: {{ JakeAMRank }}</p>
+            <iframe width="1280" height="720"src="https://www.youtube.com/embed/rHRSczUtVHY"></iframe>
+        </div>
+    </div>
+</div>
+<div id="sponsors">
+    <h1>Sponsors</h1>
+<div id="sponsor-list">
+    <div class="sponsor">
+        <img class="sponsor-image" src="{{ STATIC_PREFIX }}images/sponsors/item42.png"></img>
+        <p>Item42</p>
+    </div>
+    <div class="sponsor">
+        <img class="sponsor-image" src="{{ STATIC_PREFIX }}images/sponsors/defaultinteractive.png"></img>
+        <p>Defaultinteractive</p>
+    </div>
+    <div class="sponsor">
+        <img class="sponsor-image" src="{{ STATIC_PREFIX }}images/sponsors/MSS.png"></img>
+        <p>Morbis Software Solutions</p>
+    </div>
+</div>
+</div>
+
+<script src="{% static 'index.js' %}"></script>
+</body>
