@@ -1,0 +1,56 @@
+name: Build Python Container
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+  
+jobs:
+  packer_build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Add Packer key
+        run: curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+
+      - name: Add Packer repo
+        run: sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+
+      - name: Install Packer
+        run: sudo apt-get update && sudo apt-get install packer
+
+      - uses: actions/checkout@v1
+
+      - name: Swap in Django secret
+        run: sed -i 's/DjangoSecretHere/${{ secrets.DJANGO_SECRET }}/' eTrash/settings.py
+
+      - name: Swap in allowed host
+        run: sed -i 's/127\.0\.0\.1/${{ secrets.ETRASH_HOST }}/' eTrash/settings.py
+
+      - name: Swap in Steam API key
+        run: sed -i 's/SteamApiKeyHere/${{ secrets.STEAM_API_KEY }}/' eTrash/settings.py
+
+      - name: Swap in Mitch steamid
+        run: sed -i 's/MitchSteamIdHere/${{ secrets.MITCH_STEAM_ID }}/' eTrash/settings.py
+
+      - name: Swap in Callum steamid
+        run: sed -i 's/CallumSteamIdHere/${{ secrets.CALLUM_STEAM_ID }}/' eTrash/settings.py
+
+      - name: Swap in Jake steamid
+        run: sed -i 's/JakeSteamIdHere/${{ secrets.JAKE_STEAM_ID }}/' eTrash/settings.py
+
+      - name: Swap in Scanner steamid
+        run: sed -i 's/ScannerSteamIdHere/${{ secrets.SCANNER_STEAM_ID }}/' eTrash/settings.py
+
+      - name: Swap in Dongy steamid
+        run: sed -i 's/DongySteamIdHere/${{ secrets.DONGY_STEAM_ID }}/' eTrash/settings.py
+      
+      - name: Packer build
+        run: cd .build && packer build eTrash-python.pkr.hcl
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: eu-west-1
+          
