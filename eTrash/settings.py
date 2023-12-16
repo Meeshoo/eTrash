@@ -16,9 +16,9 @@ DONGY_STEAM_ID = "DongySteamIdHere"
 
 #from .redacted_things import *
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['www.etrash.pro']
 
 
 # Application definition
